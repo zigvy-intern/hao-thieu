@@ -1,12 +1,13 @@
 import React from 'react';
+import { Grid, Row, Col, PageHeader } from 'react-bootstrap';
 const Layout = ({content}) => (
-  <div>
-    <header>
-      <h1>Hao-Thieu</h1>
-    </header>
-    <div>
-      {content()}
-    </div>
-  </div>
+  <Grid>
+    <Row>
+      <Col xs={12}>
+        <PageHeader>Hao-Thieu </PageHeader>
+      </Col>
+    </Row>
+    {content()}
+    </Grid>
 );
 export default Layout;

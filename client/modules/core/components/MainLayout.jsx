@@ -4,10 +4,10 @@ const Layout = ({content}) => (
   <Grid>
     <Row>
       <Col xs={12}>
-        <PageHeader>Hao-Thieu </PageHeader>
+        <PageHeader>Impossible List </PageHeader>
       </Col>
     </Row>
     {content()}
     </Grid>
 );
-export default Layout;
+export default Layout

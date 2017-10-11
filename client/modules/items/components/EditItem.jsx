@@ -11,6 +11,7 @@ const EditItem = ({content}) => (
 <FormGroup>
 <FormControl type="text" placeholder="Name" />
 <FormControl type="textarea" placeholder="Description" />
+<DateTimeField />
 <Button bsStyle="primary" type="submit">Save Item</Button>
 </FormGroup>
 </form>

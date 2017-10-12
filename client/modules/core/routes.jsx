@@ -4,6 +4,7 @@ import {mount} from 'react-mounter';
 import Layout from './components/MainLayout.jsx';
 import ItemList from '../items/components/ItemList.jsx';
 import NewUser from '../users/components/NewUser.jsx';
+import Login from '../users/containers/Login.js';
 
 export default function (injectDeps, {FlowRouter}) {
   const MainLayoutCtx = injectDeps(Layout);
@@ -34,26 +35,20 @@ export default function (injectDeps, {FlowRouter}) {
       });
     }
   });
-}
-
-/**
-export default function (injectDeps, {FlowRouter}) {
-  const MainLayoutCtx = injectDeps(Layout);
-  FlowRouter.route('/', {
-    name: 'items.list',
+  FlowRouter.route('/login', {
+    name: 'users.login',
     action() {
       mount(MainLayoutCtx, {
-        content: () => (<p>Hello</p>)
-        });
-      }
-    });
-  }
-  FlowRouter.route('/edit', {
-    name: 'items.edit',
-    action() {
-      mount(MainLayoutCtx, {
-        content: () => (<EditItem />)
-        });
-      }
+        content: () => (<Login />)
+      });
+    }
   });
-  **/
+  FlowRouter.route('/logout', {
+    name: 'users.logout',
+    action() {
+    Meteor.logout();
+    FlowRouter.go('/');
+    }
+  });
+
+}

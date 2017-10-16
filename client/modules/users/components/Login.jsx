@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Panel, Input,FormGroup, FormControl, Button, Glyphicon } from 'react-bootstrap';
+
   class Login extends React.Component {
       render() {
         const {error} = this.props;
@@ -10,8 +11,8 @@ import { Col, Panel, Input,FormGroup, FormControl, Button, Glyphicon } from 'rea
                   {error ? <p style={{color: 'red'}}>{error}</p> : null}
                     <form>
                       <FormGroup>
-                        <FormControl ref="email" type="email" placeholder="Email" />
-                        <FormControl ref="password" type="password" placeholder="Password" />
+                        <FormControl inputRef={mail => this.refName = mail} type="email" placeholder="Email" />
+                        <FormControl inputRef={password => this.refName = password} type="password" placeholder="Password" />
                         <Button onClick={this.login.bind(this)}
                         bsStyle="primary" type="submit" >Login </Button>
                       </FormGroup>
@@ -20,13 +21,13 @@ import { Col, Panel, Input,FormGroup, FormControl, Button, Glyphicon } from 'rea
                 </Col>
               )
             }
+
         login(e) {
             e.preventDefault();
             const {loginUser} = this.props;
-            const {email, password} = this.refs;
-            loginUser(email.getValue(), password.getValue());
-            email.getInputDOMNode().value = '';
-            password.getInputDOMNode().value = '';
+            const mail = this.refName.value;
+            loginUser(mail);
+              this.refName.value = '';
           }
         }
 export default Login;

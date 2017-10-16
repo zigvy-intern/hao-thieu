@@ -7,7 +7,8 @@ const items = Collections.Items.find().fetch();
 onData(null, {items});
 }
 };
+
 export default composeAll(
 composeWithTracker(composer),
 useDeps()
-)(ItemList)
+)(ItemList);

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, Panel, Glyphicon, FormGroup, FormControl } from 'react-bootstrap';
+import { Input, Row, Col, Panel, Glyphicon, FormGroup, FormControl } from 'react-bootstrap';
 const Item = ({content}) => (
 <Col xs={4}>
   <Panel>

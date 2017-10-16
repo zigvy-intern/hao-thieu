@@ -11,8 +11,8 @@ class NewUser extends React.Component {
             {error ? <p style={{color: 'red'}}>{error}</p> : null}
             <form>
               <FormGroup>
-              <FormControl inputRef={mail => this.refName = mail} type="email" placeholder="Email" />
-              <FormControl inputRef={password => this.refName = password} type="password" placeholder="Password" />
+              <FormControl inputRef={mail => this.refMail = mail} type="email" placeholder="Email" />
+              <FormControl inputRef={password => this.refPass = password} type="password" placeholder="Password" />
               <Button onClick={this.createUser.bind(this)}
               bsStyle="primary" type="submit" >Sign up </Button>
               </FormGroup>
@@ -25,9 +25,9 @@ class NewUser extends React.Component {
     createUser(e) {
       e.preventDefault();
       const {createUser} = this.props;
-      const mail = this.refName.value;
-      createUser(mail);
-        this.refName.value = '';
-      }
+      const mail = this.refMail.value;
+      const password = this.refPass.value;
+      createUser(mail,password);
     }
+}
 export default NewUser

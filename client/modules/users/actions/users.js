@@ -18,9 +18,12 @@ export default {
         return LocalState.set('CREATE_USER_ERROR', 'Password is required.');
       }
       LocalState.set('CREATE_USER_ERROR', null);
-      Accounts.createUser({email, password});
-      FlowRouter.go('/');
-    },  
+      Meteor.call('users.create', email, password, (error, reponse) => {
+        console.log(reponse);
+          if(reponse)
+            FlowRouter.go('/');
+      })
+    },
     clearErrors({LocalState}) {
       return LocalState.set('SAVING_ERROR', null);
     }

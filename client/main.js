@@ -1,7 +1,7 @@
 import { Template } from 'meteor/templating';
 import { ReactiveVar } from 'meteor/reactive-var';
 import { createApp } from 'mantra-core';
-import initContext from './config/context';
+import initContext from './configs/context';
 //modules
 import coreModule from './modules/core';
 import usersModule from './modules/users';

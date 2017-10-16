@@ -13,6 +13,7 @@ export const depsMapper = (context, actions) => ({
   clearErrors: actions.users.clearErrors,
   context: () => context
 });
+
 export default composeAll(
   composeWithTracker(composer),
   useDeps(depsMapper)

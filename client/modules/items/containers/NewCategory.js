@@ -1,5 +1,6 @@
 import NewCategory from '../components/NewCategory.jsx';
 import {useDeps, composeWithTracker, composeAll} from 'mantra-core';
+
 export const composer = ({context, clearErrors}, onData) => {
 const {LocalState} = context();
 const error = LocalState.get('CREATE_CATEGORY_ERROR');
